@@ -18,6 +18,8 @@ public class StatePattern : MonoBehaviour
     {
         anim= GetComponent<Animator>();
         current = new IdleState();
+        idlestate = new IdleState();
+        dancingstate = new DancingState();
     }
 
    
@@ -45,7 +47,7 @@ public class StatePattern : MonoBehaviour
         public void changeState(StatePattern npc)
         {
             
-            npc.current = new IdleState();
+            npc.current = npc.idlestate;
            
         }
         public void Handle(StatePattern npc)
@@ -61,7 +63,7 @@ public class StatePattern : MonoBehaviour
         public void changeState(StatePattern npc)
         {
             
-            npc.current=new DancingState();
+            npc.current=npc.dancingstate;
         }
         public void Handle(StatePattern npc)
         {
